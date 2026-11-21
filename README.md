@@ -18,15 +18,15 @@ To analyze quarterly product sales data across multiple products and quarters us
 8. **Stop** the program.
 ## Program
 
-import numpy as np
-
-
-def analyze_sales(sales):
-    product_totals = np.sum(sales, axis=1)
-    quarter_totals = np.sum(sales, axis=0)
-    mean_sales = np.mean(sales)
-    max_sales = np.max(sales)
-    min_sales = np.min(sales)
+    import numpy as np
+    
+    
+    def analyze_sales(sales):
+        product_totals = np.sum(sales, axis=1)
+        quarter_totals = np.sum(sales, axis=0)
+        mean_sales = np.mean(sales)
+        max_sales = np.max(sales)
+        min_sales = np.min(sales)
 
     return {
         "product_totals": product_totals,
@@ -37,13 +37,13 @@ def analyze_sales(sales):
     }
 
 
-def main():
-    # Step 1: Create 2D array (Rows = Products, Columns = Quarters)
-    sales = np.array([
-        [12000, 15000, 14000, 16000],  # Product 1 (Q1-Q4)
-        [9500, 11000, 10500, 12500],   # Product 2 (Q1-Q4)
-        [18000, 17500, 19000, 21000],  # Product 3 (Q1-Q4)
-    ])
+    def main():
+        # Step 1: Create 2D array (Rows = Products, Columns = Quarters)
+        sales = np.array([
+            [12000, 15000, 14000, 16000],  # Product 1 (Q1-Q4)
+            [9500, 11000, 10500, 12500],   # Product 2 (Q1-Q4)
+            [18000, 17500, 19000, 21000],  # Product 3 (Q1-Q4)
+        ])
 
     # Step 2: Calculate Aggregations and Summary Statistics
     stats = analyze_sales(sales)
